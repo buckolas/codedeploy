@@ -1,5 +1,8 @@
 Create an EC2
 
+Add secgroup for port 3000
+Add IAM
+
 Install CodeDeploy agent
 
 sudo yum update
@@ -19,4 +22,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | b
 nvm install 10.13.0
 
 
-Create appspec.yml
+Create appspec.yml, start and stop TypeScript
+
+
+Troubleshoot
+less /var/log/aws/codedeploy-agent/codedeploy-agent.log
