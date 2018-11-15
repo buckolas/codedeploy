@@ -1,7 +1,8 @@
 Create an EC2
 
 Add secgroup for port 3000
-Add IAM
+IAM role for CodeDeploy to talk to EC2 instances.
+IAM role for EC2 to access S3.
 
 Install CodeDeploy agent
 
@@ -27,3 +28,6 @@ Create appspec.yml, start and stop TypeScript
 
 Troubleshoot
 less /var/log/aws/codedeploy-agent/codedeploy-agent.log
+
+
+tar -cvzf codedeploy.tgz *
