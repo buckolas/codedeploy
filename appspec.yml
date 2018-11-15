@@ -22,6 +22,4 @@ hooks:
 #      timeout: 300
 #      runas: ec2-user
 #AfterInstall:
-#ApplicationStart:
-#ApplicationStop:
 #ValidateService:
