@@ -3,7 +3,7 @@
 ## Prerequisites
 IAM roles created in advance
 1. IAM role for CodeDeploy to talk to EC2 instances
-2. EC2 instances to hit S3 (optional)
+2. IAM instance profile required - S3 access
 
 ## Create application
 Review node application
