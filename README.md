@@ -1,33 +1,33 @@
-Create an EC2
+# CodeDeploy Tech Talk
 
-Add secgroup for port 3000
-IAM role for CodeDeploy to talk to EC2 instances.
-IAM role for EC2 to access S3.
+## Prerequisites
+IAM roles created in advance
+1. IAM role for CodeDeploy to talk to EC2 instances
+2. EC2 instances to hit S3 (optional)
 
-Install CodeDeploy agent
+## Create application
+Review node application
 
-sudo yum update
-sudo yum install ruby
-sudo yum install node
-sudo yum install wget
-cd /home/ec2-user
-wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
-chmod +x ./install
-sudo ./install auto
+## Create an EC2
+* Add security group for port 3000
+* Tag instance
+* Install CodeDeploy agent in UserData
 
-sudo service codedeploy-agent start
-sudo service codedeploy-agent status
+```
+#!/bin/bash
+yum update -y
+yum install -y ruby
+yum install -y node
+yum install -y wget
+wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install -P /tmp
+chmod +x /tmp/install
+/tmp/install auto
+```
 
-Install NodeJS
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
-nvm install 10.13.0
+## Create CodeDeploy Application Specification File
+Review appspec.yml, start, stop, install scripts
 
-
-Create appspec.yml, start and stop 
-
-
-Troubleshoot
-less /var/log/aws/codedeploy-agent/codedeploy-agent.log
-
-
-tar -cvzf codedeploy.tgz *
+## Deploy application
+1. Create CodeDeploy deployment and deploy code
+2. Modify code
+3. Redeploy
