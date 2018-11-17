@@ -17,9 +17,9 @@ hooks:
     - location: stop.sh
       timeout: 300
       runas: ec2-user
-#  BeforeInstall:
-#    - location: install-node.sh
-#      timeout: 300
-#      runas: ec2-user
+  BeforeInstall:
+    - location: install-node.sh
+      timeout: 300
+      runas: ec2-user
 #AfterInstall:
 #ValidateService:
